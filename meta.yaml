@@ -1,0 +1,24 @@
+package:
+  name: perf_sleep
+  version: 0.0.1
+
+source:
+
+  path: .
+
+requirements:
+
+  build:
+    - cmake
+    - python
+    - pybind11  
+    - conda-build
+
+  run:
+    - python
+
+  home: https://github.com/AndrePatri/PerfSleep
+
+  license: MIT
+
+  summary: minimal python bindings to perform CPU-cheap and relatively low-latency sleep using C++ clock_nanosleep or sleep_for
