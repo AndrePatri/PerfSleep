@@ -34,7 +34,7 @@ class PerfSleep
 
         static void thread_sleep(int nsecs); 
 
-        void clock_sleep(int nsecs);
+        bool clock_sleep(std::chrono::nanoseconds::rep nsecs);
 
 };
 

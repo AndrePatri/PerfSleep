@@ -27,9 +27,12 @@ void PerfSleep::thread_sleep(int nsecs)
     std::this_thread::sleep_for(std::chrono::nanoseconds(nsecs));
 }
 
-void PerfSleep::clock_sleep(int nsecs)
+bool PerfSleep::clock_sleep(std::chrono::nanoseconds::rep nsecs)
 {         
+
+    _req.tv_sec = 0;
+
     _req.tv_nsec = nsecs;
 
-    clock_nanosleep(CLOCK_REALTIME, 0, &_req, &_rem);
+    return clock_nanosleep(CLOCK_REALTIME, 0, &_req, &_rem) == 0;
 }
