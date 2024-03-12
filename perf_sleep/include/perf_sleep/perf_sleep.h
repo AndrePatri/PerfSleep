@@ -32,7 +32,7 @@ class PerfSleep
 
         timespec _req, _rem;
 
-        static void thread_sleep(int nsecs); 
+        static void thread_sleep(unsigned int nsecs); 
 
         bool clock_sleep(std::chrono::nanoseconds::rep nsecs);
 

@@ -27,7 +27,7 @@ PYBIND11_MODULE(pyperfsleep, m) {
 
     py::class_<PerfSleep>(m, "PerfSleep")
             .def(py::init())
-            .def_static("thread_sleep", &PerfSleep::thread_sleep, "sleep with high precision using thread");
+            .def_static("thread_sleep", &PerfSleep::thread_sleep, "sleep with high precision using thread"), pybind11::arg("nsec");
             // .def("clock_sleep", &PerfSleep::clock_sleep, "sleep with high precision using clock_nanosleep");
             
 }

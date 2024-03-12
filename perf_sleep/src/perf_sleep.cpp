@@ -22,7 +22,7 @@ PerfSleep::PerfSleep()
     _req.tv_sec = 0; 
 }
 
-void PerfSleep::thread_sleep(int nsecs)
+void PerfSleep::thread_sleep(unsigned int nsecs)
 {   
     std::this_thread::sleep_for(std::chrono::nanoseconds(nsecs));
 }
